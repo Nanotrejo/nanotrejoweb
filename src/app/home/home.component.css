@@ -1,0 +1,99 @@
+    .set-navbar {
+        color: var(--letter);
+        margin: 0 auto;
+        display: table;
+    }
+    
+    .navbar-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    
+    .nav-menu {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    
+    .logo {
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    div>ul>li>a {
+        margin: 2rem;
+        text-decoration: none;
+        color: var(--text-color-navbar);
+    }
+    
+    div>ul>li>a:hover {
+        color: var(--hover);
+        transition: .3s;
+        transform: scale(1.3);
+    }
+    
+    .logo:hover {
+        transition: .3s;
+        transform: scale(1.3);
+    }
+    
+    .overline {
+        margin: 2rem;
+        color: #00df9a;
+        font-size: 22px;
+        /* line-height: 15px; */
+        font-weight: 500;
+        letter-spacing: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    .home {
+        text-align: center;
+        color: var(--letter);
+        font-size: medium;
+        font-weight: bold;
+        line-height: 2rem;
+    }
+    
+    .home-text {
+        font-weight: bold;
+        line-height: 4rem;
+    }
+    
+    .home-text-description {
+        font-size: large;
+        color: rgba(177, 174, 174, 0.705);
+    }
+    
+    .img {
+        width: 40%;
+        border-radius: 10rem;
+    }
+    
+    @media (max-width: 990px) {
+        a>img {
+            display: none;
+        }
+        .set-navbar {
+            display: flex;
+        }
+        div>ul>li>a {
+            margin: 1rem;
+        }
+    }
