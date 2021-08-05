@@ -33,8 +33,6 @@ export class HomeComponent implements OnInit {
       .changeOps({ deleteSpeed: 100 })
       .remove(12)
       .rest(500)
-      // .type('change options on the go')
-      // .rest(500)
       .clear()
       .start()
     }
