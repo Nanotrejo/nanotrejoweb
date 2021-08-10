@@ -23,3 +23,13 @@ body {
     background: -webkit-linear-gradient(to right, #3A6073, #16222A);
     background: linear-gradient(to right, #3A6073, #16222A);
 }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
