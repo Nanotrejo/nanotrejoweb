@@ -20,7 +20,9 @@
 }
 
 .navbar-scroll {
-    background-color: #223743ed;
+    /* background-color: #223743ed; */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
     border: none;
 }
 

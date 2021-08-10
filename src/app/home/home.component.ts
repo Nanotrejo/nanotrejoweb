@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 const typewriter = require('t-writer.js');
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor(private dialogRef: MatDialog) {}
 
   ngOnInit(): void {
     const target = document.querySelector('.typewriter');
-   
+
     const writer = new typewriter(target, {
       loop: true,
       typeSpeed: 100,
       deleteSpeed: 100,
       typeColor: '#00df9a',
-      cursorColor: 'rgba(255,255,255, 0.74)'
+      cursorColor: 'rgba(255,255,255, 0.74)',
     })
       .type('entusiasta.')
       .rest(500)
@@ -34,7 +33,6 @@ export class HomeComponent implements OnInit {
       .remove(12)
       .rest(500)
       .clear()
-      .start()
-    }
-
+      .start();
+  }
 }
