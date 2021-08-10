@@ -11,12 +11,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { CardFlipModule } from './shared/card/card-flip/card-flip/card-flip.module';
 import { MatIconModule } from '@angular/material/icon';
+import { ProjectComponent } from './shared/project/project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
