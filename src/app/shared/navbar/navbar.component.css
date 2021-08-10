@@ -1,7 +1,5 @@
 .set-navbar {
     color: var(--letter);
-    /* margin: 0 auto; */
-    /* display: table; */
 }
 
 .navbar-container {
@@ -20,10 +18,12 @@
 }
 
 .navbar-scroll {
-    /* background-color: #223743ed; */
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     border: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-menu {
