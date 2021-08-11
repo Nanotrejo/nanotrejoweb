@@ -13,6 +13,10 @@ import { CardFlipModule } from './shared/card/card-flip/card-flip/card-flip.modu
 import { MatIconModule } from '@angular/material/icon';
 import { ProjectComponent } from './shared/project/project/project.component';
 import { FooterComponent } from './shared/footer/footer/footer.component';
+import { AboutComponent } from './shared/about/about/about.component';
+import { ContactComponent } from './shared/contact/contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
     NavbarComponent,
     ProjectComponent,
     FooterComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,9 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
     MatDialogModule,
     MatButtonModule,
     CardFlipModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

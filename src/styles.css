@@ -12,6 +12,9 @@
     --hover: white;
     --text-color-navbar: rgba(255, 255, 255, 0.74);
     --card-hover: rgb(136, 170, 184, 0.2);
+    --text-light: #8dda7a;
+    --overline: #00df9a;
+    --background: #3A6073;
 }
 
 * {
