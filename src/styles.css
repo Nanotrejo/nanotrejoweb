@@ -34,3 +34,9 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

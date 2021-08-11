@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardFlipModule } from './shared/card/card-flip/card-flip/card-flip.module';
 import { MatIconModule } from '@angular/material/icon';
 import { ProjectComponent } from './shared/project/project/project.component';
+import { FooterComponent } from './shared/footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProjectComponent } from './shared/project/project/project.component';
     HomeComponent,
     NavbarComponent,
     ProjectComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
