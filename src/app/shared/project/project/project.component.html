@@ -1,38 +1,34 @@
 <div class="container">
     <div class="grid-container">
-        <div class="card effect-link">
+        <div class="card effect-link" *ngFor="let project of projects">
             <div class="icon-card">
-                <mat-icon class="animate__animated animate__backInUp"> <span class="icon material-icons-outlined">
+                <mat-icon *ngIf="project.drive?.length != 0" class="animate__animated animate__backInUp m-1"> <span class="icon material-icons-outlined">
                         insert_drive_file
-                        <p style="font-size: 14px;">
+                        <p class="mt-2" style="font-size: 14px;">
                             Google Drive
                         </p>
                         </span>
                 </mat-icon>
-            </div>
-            <img class="card-img-top img-card" src="../../../../assets/img/test.jpg" alt="HealthCare">
-            <div class="card-body">
-                <h5 class="card-title">HealthCare</h5>
-                <p class="card-text">Proyecto fin de carrera</p>
-            </div>
-        </div>
-
-        <div class="card effect-link">
-            <div class="icon-card">
-                <mat-icon class="animate__animated animate__backInUp"> <span class="icon material-icons-outlined">
-                        insert_drive_file
-                        <p style="font-size: 14px;">
-                            Google Drive
+                <mat-icon *ngIf="project.github?.length != 0" class="animate__animated animate__backInUp m-1">
+                    <span class="icon d-block">
+                        <i class="fab fa-github"></i>
+                        <p class="mt-2" style="font-size: 14px;">
+                            Github
+                        </p>
+                    </span>
+                </mat-icon>
+                <mat-icon *ngIf="project.web?.length != 0" class="animate__animated animate__backInUp m-1"> <span class="icon material-icons-outlined">
+                        language
+                        <p class="mt-2" style="font-size: 14px;">
+                            Web
                         </p>
                         </span>
                 </mat-icon>
             </div>
-            <img class="card-img-top img-card" src="../../../../assets/img/test.jpg" alt="HealthCare">
+            <img class="card-img-top img-card" src="{{project?.img}}" alt="project?.title">
             <div class="card-body">
-                <h5 class="card-title">HealthCare</h5>
-                <p class="card-text">Proyecto fin de carrera</p>
+                <h5 class="card-title">{{project?.title}}</h5>
+                <p class="card-text">{{project?.subtitle}}</p>
             </div>
         </div>
-
-
     </div>

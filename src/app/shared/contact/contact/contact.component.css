@@ -42,3 +42,8 @@ img {
 .all-column {
     grid-column: 1/3;
 }
+
+.icon-set {
+    color: white;
+    font-size: 3rem;
+}

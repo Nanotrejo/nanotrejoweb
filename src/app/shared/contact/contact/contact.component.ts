@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmailService } from '../../../service/email.service';
+import { EmailService } from '../../../core/service/email.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Contact } from '../../../core/interface/contact';
+import { type } from 'os';
 
 @Component({
   selector: 'app-contact',
@@ -8,20 +11,40 @@ import { EmailService } from '../../../service/email.service';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  dataForm = {
-    name: '',
-    lastname: '',
-    email: '',
-    subject:'',
-    message: '',
-  };
-  constructor(private emailService: EmailService) {}
+  dataForm: Contact = {};
+  
+  constructor(
+    private emailService: EmailService,
+    private snackbar: MatSnackBar
+    ) {
+    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   send(form: NgForm) {
-    if(form.valid){
-      this.emailService.onSubmit(form); 
+    if (form.valid) {
+      this.emailService.onSubmit(form.value).subscribe((res: any) => {
+        if (res.ok) {
+          this.snackbar.open('Enviado', '🍫', {
+            duration: 3500,
+            verticalPosition: 'top',
+            horizontalPosition: 'end',
+            panelClass: ['snackbar-success'],
+          });
+          
+        form.reset();
+        this.dataForm = {};
+
+        } else {
+          this.snackbar.open('Error', 'Inténtelo de nuevo', {
+            duration: 3500,
+            verticalPosition: 'top',
+            horizontalPosition: 'end',
+            panelClass: ['snackbar-error'],
+          });
+        }
+      });
     }
   }
 }
