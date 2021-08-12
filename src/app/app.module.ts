@@ -17,7 +17,7 @@ import { AboutComponent } from './shared/about/about/about.component';
 import { ContactComponent } from './shared/contact/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     CardFlipModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
