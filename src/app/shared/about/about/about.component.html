@@ -7,13 +7,17 @@
     </div>
     <div class="mt-5">
         <p class="arrow">Trayectoria profesional</p>
+        <app-timeline></app-timeline>
     </div>
     <div class="mt-5">
         <p class="arrow">Descargar mi Curriculum Vitae</p>
-        <p class="m-2">Puedes descargar mi Curriculum Vitae en formato PDF haciendo <a href="../../../../assets/docs/CV - David Trejo (kb).pdf">click</a> en el siguiente botón.</p>
-        <form action="../../../../assets/docs/CV - David Trejo (kb).pdf" class="mt-4">
+        <p class="m-2">Puedes descargar mi Curriculum Vitae en formato PDF haciendo <a href="{{cv}}" target="_black">click</a> en el siguiente botón.</p>
+        <!-- <form action="../../../../assets/docs/CV - David Trejo (kb).pdf" class="mt-4">
             <input class="button" type="submit" name="" value="Descargar CV">
-        </form>
+        </form> -->
+        <button class="button mt-2">
+            <a class="center-content" href="{{cv}}" target="_black">Descargar CV</a>       
+          </button>
     </div>
     <div>
 

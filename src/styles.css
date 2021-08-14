@@ -58,3 +58,7 @@ body {
     font-size: 15px;
     font-weight: bold;
 }
+
+.mat-simple-snackbar-action button {
+    color: var(--letter);
+}

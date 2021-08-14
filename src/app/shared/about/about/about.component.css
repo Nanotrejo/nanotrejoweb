@@ -30,6 +30,10 @@ a:hover {
     opacity: 0.6;
 }
 
+.button a {
+    color: var(--letter);
+}
+
 .arrow {
     font-size: 15px;
     text-transform: uppercase;
