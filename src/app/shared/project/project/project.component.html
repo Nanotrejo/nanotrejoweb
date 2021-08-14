@@ -1,23 +1,29 @@
-<div class="container">
+<div class="container" *ngIf="loading">
     <div class="grid-container">
-        <div class="card effect-link" *ngFor="let project of projects">
+        <div class="card effect-link animate__animated animate__bounceInRight" *ngFor="let project of projects">
             <div class="icon-card">
-                <mat-icon *ngIf="project.drive?.length != 0" class="animate__animated animate__backInUp m-1"> <span class="icon material-icons-outlined">
-                        insert_drive_file
-                        <p class="mt-2" style="font-size: 14px;">
-                            Google Drive
-                        </p>
-                        </span>
+                <mat-icon *ngIf="project.drive?.length != 0" class="animate__animated animate__backInUp m-1">
+                    <span class="icon material-icons-outlined">
+                        <a href="{{project?.drive}}" target="_black" class="center-content position-absolute w-100 h-100"></a>
+                    insert_drive_file
+                    <p class="mt-2" style="font-size: 14px;">
+                        Google Drive
+                    </p>
+                </span>
                 </mat-icon>
                 <mat-icon *ngIf="project.github?.length != 0" class="animate__animated animate__backInUp m-1">
                     <span class="icon d-block">
+                        <a href="{{project?.github}}" target="_black" class="center-content position-absolute w-100 h-100"></a>
                         <i class="fab fa-github"></i>
                         <p class="mt-2" style="font-size: 14px;">
                             Github
                         </p>
                     </span>
                 </mat-icon>
-                <mat-icon *ngIf="project.web?.length != 0" class="animate__animated animate__backInUp m-1"> <span class="icon material-icons-outlined">
+                <mat-icon *ngIf="project.web?.length != 0" class="animate__animated animate__backInUp m-1">
+                    <span class="icon material-icons-outlined">
+                        <a href="{{project?.web}}" target="_black" class="center-content position-absolute w-100 h-100"></a>
+
                         language
                         <p class="mt-2" style="font-size: 14px;">
                             Web

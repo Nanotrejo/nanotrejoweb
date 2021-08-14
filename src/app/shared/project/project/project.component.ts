@@ -9,6 +9,7 @@ import { ProjectService } from '../../../core/service/project.service';
 })
 export class ProjectComponent implements OnInit {
   projects: Project[] = [];
+  loading = false;
 
   constructor(private projectService: ProjectService) {}
 
@@ -16,6 +17,7 @@ export class ProjectComponent implements OnInit {
     this.projectService.getProject().subscribe((res: any) => {
       res.msg.forEach((project: Project) => {
         this.projects.push(project);
+        this.loading = true;
       });
     });
   }
