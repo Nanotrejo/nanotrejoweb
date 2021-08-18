@@ -1,0 +1,28 @@
+<div class="container">
+    <div (click)="toggle()" [ngClass]="toggleProperty ? 'flipped' : ''" class="card flip m-2">
+        <div class="img front">
+            <ng-content select="card-flip-front"></ng-content>
+            <img [ngClass]="toggleProperty ? 'img-flip' : ''" class="img animate__animated animate__flipInY" src="assets/img/nanotrejo.jpg" alt="nanotrejo">
+            <p [ngClass]="toggleProperty ? 'img-flip' : ''" class="animate__animated animate__flipInY">Más información</p>
+        </div>
+        <div class="back" style="margin-top: 5%">
+            <ng-content select="card-flip-back"></ng-content>
+            <div class="more-info">
+                <h2 class="mb-4">Información personal </h2>
+                <table>
+
+                    <tr *ngFor="let info of personalInfo | keyvalue : originalOrder">
+                        <td>{{info.key}}</td>
+                        <td>
+                            <mat-icon fontSet="fa" class="fa-solid fa-caret-right"></mat-icon>
+                        </td>
+                        <td>
+                            {{info.value}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

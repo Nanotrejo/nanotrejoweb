@@ -1,0 +1,44 @@
+.center-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+p {
+    color: var(--text-color-navbar);
+}
+
+a {
+    text-decoration: none;
+    color: var(--overline);
+}
+
+a:hover {
+    /* color: var(--hover); */
+    opacity: 0.6;
+}
+
+.button {
+    background: var(--overline);
+    color: var(--letter);
+    border: 1px solid var(--background);
+    border-radius: 1rem;
+    height: 3rem;
+    width: 10rem;
+}
+
+.button:hover {
+    opacity: 0.6;
+}
+
+.button a {
+    color: var(--letter);
+}
+
+.arrow {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: url(../../../../assets/img/decoration.png) no-repeat center bottom;
+    padding-bottom: 30px;
+    font-weight: bold;
+}

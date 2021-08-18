@@ -1,0 +1,39 @@
+<div class="center-content">
+    <div class="center-content">
+        <!-- <img src="../../../../assets/img/telegramw.png" alt="sms"> -->
+        <i class="fab fa-telegram-plane icon-set"></i>
+        <p class="mt-4">Envíame un mensaje:</p>
+    </div>
+
+    <form autocomplete="off" (ngSubmit)="send(form)" #form="ngForm">
+        <div class="form-row center-content center-form">
+            <div class="col-md-4 mb-3 center-content">
+                <label>Nombre</label>
+                <input name="name" ngModel [ngModel]="dataForm?.name" [class.is-valid]="name.valid && name.touched" [class.is-invalid]="name.invalid && name.touched" type="text" class="form-control" placeholder="Nombre" #name="ngModel" required>
+            </div>
+            <div class="col-md-4 mb-3 center-content">
+                <label>Apellidos</label>
+                <input name="lastname" ngModel [ngModel]="dataForm?.lastname" [class.is-valid]="lastname.valid && lastname.touched" [class.is-invalid]="lastname.invalid && lastname.touched" type="text" class="form-control" placeholder="Apellidos" #lastname="ngModel"
+                    required>
+            </div>
+            <div class="col-md-4 mb-3 center-content all-column">
+                <label>Correo electrónico</label>
+                <input name="email" ngModel [ngModel]="dataForm?.email" type="email" class="form-control" [class.is-valid]="email.valid && email.touched" [class.is-invalid]="email.invalid && email.touched" placeholder="Correo electrónico" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    required>
+            </div>
+            <div class="col-md-4 mb-3 center-content all-column m-auto" style="width: 65%;">
+                <label>Asunto</label>
+                <input name="subject" ngModel [ngModel]="dataForm?.subject" [class.is-valid]="subject.valid && subject.touched" [class.is-invalid]="subject.invalid && subject.touched" type="text" class="form-control" placeholder="Asunto" #subject="ngModel" required>
+            </div>
+            <div class="col-md-4 mb-3 center-content all-column">
+                <label>Mensaje</label>
+                <textarea name="message" ngModel [ngModel]="dataForm?.message" [class.is-valid]="message.valid && message.touched" [class.is-invalid]="message.invalid && message.touched" type="text" class="form-control" placeholder="Hola David, soy.." #message="ngModel"
+                    minlength="10" required rows="10">
+                    </textarea>
+            </div>
+        </div>
+        <div class="center-content">
+            <button class="button" type="submit" [disabled]="form.invalid">Enviar</button>
+        </div>
+    </form>
+</div>

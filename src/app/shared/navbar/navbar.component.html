@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark set-navbar sticky-top p-0" [class.navbar-scroll]="window_scroll">
+    <div class="container-fluid p-0">
+        <button class="navbar-toggler" style="border: none;" type="button">
+        <img class="logo mt-1" src="assets/img/logo.PNG" alt="logo nanotrejo">
+    </button>
+        <button class="navbar-toggler" style="margin-left: auto; border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item mx-auto navbar-scroll-br">
+                    <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Inicio</a>
+                </li>
+                <li class="nav-item mx-auto navbar-scroll-br">
+                    <a class="nav-link" href="#project" routerLinkActive="active">Proyectos</a>
+                </li>
+                <a class="m-auto">
+                    <img class="logo m-4" style="cursor: pointer;" src="assets/img/logo.PNG" alt="logo nanotrejo">
+                </a>
+                <li class="nav-item mx-auto navbar-scroll-br">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" routerLink="#about">Acerca</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
