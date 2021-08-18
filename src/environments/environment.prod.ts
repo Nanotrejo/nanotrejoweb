@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  nanotrejoback: ''
+  nanotrejoback: 'https://nanotrejoback.herokuapp.com'
 };
