@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  nanotrejoback: 'http://localhost:3000'
+  nanotrejoback: 'http://192.168.1.132:3000'
 };
 
 /*
