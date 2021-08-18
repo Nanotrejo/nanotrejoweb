@@ -1,28 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-dark set-navbar sticky-top p-0" [class.navbar-scroll]="window_scroll">
     <div class="container-fluid p-0">
-        <button class="navbar-toggler" style="border: none;" type="button">
-        <img class="logo mt-1" src="assets/img/logo.PNG" alt="logo nanotrejo">
-    </button>
+        <a class="navbar-toggler" style="border: none;" (click)="goSection('home')">
+            <p>
+                <img class="logo mt-1" style="cursor: pointer;" src="assets/img/logo.PNG" alt="logo nanotrejo">
+            </p>
+        </a>
+        <!-- </button> -->
         <button class="navbar-toggler" style="margin-left: auto; border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                 <li class="nav-item mx-auto navbar-scroll-br">
-                    <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Inicio</a>
+                    <a [ngClass]="active_link == 'home' ? 'active' : ''" class="nav-link" aria-current="page" role="button" (click)="goSection('')">Inicio</a>
                 </li>
                 <li class="nav-item mx-auto navbar-scroll-br">
-                    <a class="nav-link" href="#project" routerLinkActive="active">Proyectos</a>
+                    <a [ngClass]="active_link == 'project' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('project')">Proyectos</a>
                 </li>
-                <a class="m-auto">
+                <a class="m-auto" (click)="goSection('home')">
                     <img class="logo m-4" style="cursor: pointer;" src="assets/img/logo.PNG" alt="logo nanotrejo">
                 </a>
                 <li class="nav-item mx-auto navbar-scroll-br">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" routerLink="#about">Acerca</a>
+                    <a [ngClass]="active_link == 'about' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('about')">Acerca</a>
                 </li>
+                <!-- <li class="nav-item mx-auto navbar-scroll-br">
+                    <a class="nav-link" id="navbarDropdown" role="button" [routerLink] [fragment]="'about'">Acerca</a>
+                </li> -->
                 <li class="nav-item mx-auto">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+                    <a [ngClass]="active_link == 'contact' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('contact')">Contacto</a>
                 </li>
+                <!-- <li class="nav-item mx-auto">
+                    <a class="nav-link" tabindex="-1" [routerLink] [fragment]="'contact'">Contacto</a>
+                </li> -->
             </ul>
         </div>
     </div>
