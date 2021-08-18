@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TimelineComponent } from './shared/timeline/timeline/timeline.component';
 
 registerLocaleData(localeES, 'es');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,7 @@ registerLocaleData(localeES, 'es');
     HttpClientModule,
     MatSnackBarModule,
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'es'}],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
