@@ -13,6 +13,7 @@ import { of } from 'rxjs';
 })
 export class ContactComponent implements OnInit {
   dataForm: Contact = {};
+  sendValidate: Boolean = false;
 
   constructor(
     private emailService: EmailService,
@@ -23,6 +24,7 @@ export class ContactComponent implements OnInit {
 
   send(form: NgForm) {
     if (form.valid) {
+      this.sendValidate = true;
       this.emailService
         .onSubmit(form.value)
         .pipe(
@@ -32,6 +34,7 @@ export class ContactComponent implements OnInit {
         )
         .subscribe((res: any) => {
           if (res?.ok) {
+            this.sendValidate = false;
             this.snackbar.open('Enviado', '🍫', {
               duration: 3500,
               verticalPosition: 'top',
@@ -42,6 +45,7 @@ export class ContactComponent implements OnInit {
             form.reset();
             this.dataForm = {};
           } else {
+            this.sendValidate = false;
             this.snackbar.open('Error', 'Inténtelo de nuevo', {
               duration: 3500,
               verticalPosition: 'top',

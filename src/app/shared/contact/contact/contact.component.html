@@ -33,7 +33,10 @@
             </div>
         </div>
         <div class="center-content">
-            <button class="button" type="submit" [disabled]="form.invalid">Enviar</button>
+            <button *ngIf="!sendValidate" class="button" type="submit" [disabled]="form.invalid">Enviar</button>
+            <button *ngIf="sendValidate" class="button loading-position" type="submit" [disabled]="form.invalid">Enviando 
+                <div class="loading"></div>
+            </button>
         </div>
     </form>
 </div>
