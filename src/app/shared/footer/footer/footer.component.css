@@ -10,6 +10,7 @@ footer {
     flex-direction: column;
 }
 
+h1,
 p {
     color: var(--text-color-navbar);
     font-size: 12px;
