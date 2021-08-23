@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
-
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   scrollPositionRestoration: 'enabled',
@@ -11,10 +10,10 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: '**', redirectTo: '/home'},
+  { path: '**', component: HomeComponent },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
 ];
 
