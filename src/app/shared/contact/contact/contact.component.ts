@@ -18,11 +18,11 @@ export class ContactComponent implements OnInit {
   constructor(
     private emailService: EmailService,
     private snackbar: MatSnackBar
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  send(form: NgForm) {
+  sendEmail(form: NgForm): void {
     if (form.valid) {
       this.sendValidate = true;
       this.emailService
