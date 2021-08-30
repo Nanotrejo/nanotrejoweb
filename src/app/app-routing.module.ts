@@ -10,11 +10,11 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: HomeComponent },
   {
     path: 'home',
     component: HomeComponent,
   },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

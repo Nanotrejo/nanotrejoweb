@@ -1,7 +1,7 @@
-import { environment } from './../../../environments/environment';
+import { environment } from '@environment/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Timeline } from '../interface/timeline';
+import { Timeline } from '@core/interface/timeline';
 
 @Injectable({
   providedIn: 'root',
