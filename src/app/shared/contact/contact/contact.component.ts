@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmailService } from '../../../core/service/email.service';
+import { EmailService } from '@core/service/email.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Contact } from '../../../core/interface/contact';
+import { Contact } from '@core/interface/contact';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
