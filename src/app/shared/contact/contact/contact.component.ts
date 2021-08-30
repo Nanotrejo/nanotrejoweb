@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmailService } from '../../../core/service/email.service';
+import { EmailService } from '@core/service/email.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Contact } from '../../../core/interface/contact';
+import { Contact } from '@core/interface/contact';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -13,16 +13,18 @@ import { of } from 'rxjs';
 })
 export class ContactComponent implements OnInit {
   dataForm: Contact = {};
+  sendValidate: Boolean = false;
 
   constructor(
     private emailService: EmailService,
     private snackbar: MatSnackBar
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  send(form: NgForm) {
+  sendEmail(form: NgForm): void {
     if (form.valid) {
+      this.sendValidate = true;
       this.emailService
         .onSubmit(form.value)
         .pipe(
@@ -32,6 +34,7 @@ export class ContactComponent implements OnInit {
         )
         .subscribe((res: any) => {
           if (res?.ok) {
+            this.sendValidate = false;
             this.snackbar.open('Enviado', '🍫', {
               duration: 3500,
               verticalPosition: 'top',
@@ -42,6 +45,7 @@ export class ContactComponent implements OnInit {
             form.reset();
             this.dataForm = {};
           } else {
+            this.sendValidate = false;
             this.snackbar.open('Error', 'Inténtelo de nuevo', {
               duration: 3500,
               verticalPosition: 'top',

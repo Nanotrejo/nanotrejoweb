@@ -1,4 +1,4 @@
-p {
+h1 {
     color: var(--text-color-navbar);
     font-size: 15px;
     text-transform: uppercase;
@@ -46,4 +46,35 @@ img {
 .icon-set {
     color: white;
     font-size: 3rem;
+}
+
+.ng-invalid,
+.ng-valid {
+    padding-right: 0;
+}
+
+.loading {
+    border: 4px solid white;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border-left-color: var(--background);
+    padding-left: 15px;
+    margin-left: 8px;
+    animation: spin 1s linear infinite;
+}
+
+.loading-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

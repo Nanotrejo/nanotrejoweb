@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(private dialogRef: MatDialog) {}
 
   ngOnInit(): void {
+    this.typewriter();
+  }
+
+  typewriter() {
     const target = document.querySelector('.typewriter');
 
     const writer = new typewriter(target, {

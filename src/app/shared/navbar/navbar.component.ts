@@ -8,40 +8,33 @@ import { Router, RouterLinkActive } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  window_scroll = true;
+  window_scroll = false;
   navigate = ['home', 'project', 'about', 'contact'];
   active_link = '';
 
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router, private location: Location) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   @HostListener('document:scroll')
   windowScroll() {
+    
     this.window_scroll = true
-      ? document.body.scrollTop > 70 || document.documentElement.scrollTop > 70
+      ? document.documentElement.scrollTop > 0
       : false;
 
     this.navigate.forEach((nav) => {
       let aux = document.getElementById(nav);
       if (window.pageYOffset >= (aux?.offsetTop || 0) - 100) {
         this.active_link = nav;
-          // this.location.replaceState(`/home#${nav}`);
-        if (nav == 'home'){
-          //  this.location.go('/home');
-          // this.location.replaceState('home');
-        }else{
-          //  this.location.replaceState(`/home#${nav}`);
-        }
-        
       }
     });
   }
 
   goSection(path: string) {
-    if (path.length > 0){
+    if (path.length > 0) {
       this.router.navigateByUrl(`/home#${path}`);
-    }else{
+    } else {
       this.router.navigateByUrl('/home');
     }
   }
