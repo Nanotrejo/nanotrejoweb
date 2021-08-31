@@ -8,7 +8,7 @@ const typewriter = require('t-writer.js');
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private dialogRef: MatDialog) {}
+  constructor(private dialogRef: MatDialog) { }
 
   ngOnInit(): void {
     this.typewriter();
@@ -17,12 +17,15 @@ export class HomeComponent implements OnInit {
   typewriter() {
     const target = document.querySelector('.typewriter');
 
+    const typeColor = localStorage.getItem('light-mode') === 'false' ? '#00df9a' : '#00ffae';
+    const cursorColor = localStorage.getItem('light-mode') === 'false' ? 'rgba(255,255,255, 0.74)' : 'rgba(50,50,50, 0.74)'
+
     const writer = new typewriter(target, {
       loop: true,
       typeSpeed: 100,
       deleteSpeed: 100,
-      typeColor: '#00df9a',
-      cursorColor: 'rgba(255,255,255, 0.74)',
+      typeColor: typeColor,
+      cursorColor: cursorColor,
     })
       .type('entusiasta.')
       .rest(500)

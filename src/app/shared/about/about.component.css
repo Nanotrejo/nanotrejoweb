@@ -21,7 +21,7 @@ a:hover {
 .button {
     background: var(--overline);
     color: var(--letter);
-    border: 1px solid var(--background);
+    border: 0px solid var(--background);
     border-radius: 1rem;
     height: 3rem;
     width: 10rem;
@@ -39,7 +39,12 @@ a:hover {
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: url(../../../../assets/img/decoration.png) no-repeat center bottom;
+    background: url(../../../assets/img/decoration.png) no-repeat center bottom;
     padding-bottom: 30px;
     font-weight: bold;
+}
+
+.text-description {
+    margin: 0 auto;
+    width: 60%;
 }
