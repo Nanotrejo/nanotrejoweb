@@ -8,6 +8,7 @@
     display: -ms-flexbox;
     display: flex;
     outline: none;
+    width: 4rem;
 }
 
 .switch::after {
