@@ -20,7 +20,10 @@ export class TimelineComponent implements OnInit {
   constructor(private timelineService: TimelineService) {}
 
   ngOnInit(): void {
-    
+    this.getTimeline();
+  }
+
+  getTimeline(): void{
     this.timelineService.getTimeline().subscribe((res: any) => {
       this.timeline = [...res.msg];
       this.timeline.map((time) => {

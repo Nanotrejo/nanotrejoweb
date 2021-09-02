@@ -11,6 +11,7 @@
     --card-hover: rgb(136, 170, 184, 0.2);
     --text-light: #8dda7a;
     --overline: #00df9a;
+    --strong: #00ffb073;
     /* Light */
     --letter-light: rgba(0, 0, 0, 0.74);
     --hover-light: black;
@@ -23,6 +24,7 @@
     --overline-light: #00ffae;
     --text-light-description: rgba(70, 70, 70);
     --text-light-info: rgba(70, 70, 70);
+    --strong-light: #fff;
 }
 
 * {
@@ -65,6 +67,21 @@ body {
 
 .mat-simple-snackbar-action button {
     color: var(--letter);
+}
+
+.overline {
+    margin: 2rem;
+    color: var(--overline);
+    font-size: 22px;
+    line-height: 3rem;
+    font-weight: 500;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    /* height: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body.light {
@@ -124,4 +141,8 @@ body.light .social-link:hover {
     color: var(--letter-light);
     opacity: 1;
     z-index: 1;
+}
+
+body.light .strong {
+    color: var(--strong-light);
 }

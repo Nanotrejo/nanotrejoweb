@@ -47,4 +47,9 @@ a:hover {
 .text-description {
     margin: 0 auto;
     width: 60%;
+    text-align: justify;
+}
+
+.strong {
+    color: var(--strong)
 }

@@ -7,7 +7,7 @@
 <div class="container">
     <div class="timeline">
         <ul class="p-0">
-            <li *ngFor="let time of timeline" [ngStyle]="{'background': time?.type}">
+            <li *ngFor="let time of timeline; let i = index;" [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'" [ngStyle]="{'background': time?.type}">
                 <div class="timeline-content center-content flex-column">
                     <a *ngIf="time.url?.length != 0" class="center-content position-absolute link" href="{{time?.url}}" target="_black"></a>
                     <h3 *ngIf="time?.type != colorType?.job" class="date">{{time?.date | date}}</h3>

@@ -44,7 +44,7 @@ img {
 }
 
 .icon-set {
-    color: white;
+    color: white !important;
     font-size: 3rem;
 }
 
