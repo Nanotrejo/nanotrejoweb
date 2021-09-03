@@ -1,0 +1,21 @@
+<div class="w-100 flex-column">
+    <div class="center-content mt-5 animate__animated animate__fadeIn">
+        <h1 class="overline">
+            Mi rincón favorito
+        </h1>
+    </div>
+    <div class="grid-container animate__animated animate__fadeIn">
+        <div class="card effect-link h-100" data-aos="fade-left" *ngFor="let video of videos">
+            <img class="card-img-top img-card" (click)="showVideo(video.title, video.resourceId.videoId)" [src]="video.thumbnails?.high?.url" [alt]="video.title" loading="lazy">
+            <div class="card-body w-100">
+                <h2 class="card-title more-info">{{video?.title}}</h2>
+                <p class="card-text home-text-description"><strong>Autor: </strong>{{video?.channelTitle}}</p>
+                <p class="card-date home-text-description"><strong>Publicado: </strong>{{video?.publishedAt | date}}</p>
+                <div class="grid-button">
+                    <button class="btn btn-primary button" (click)="showVideo(video.title, video.resourceId.videoId)">Ver vídeo</button>
+                    <button class="btn btn-primary button button-danger" (click)="showYoutube(video.resourceId.videoId)" target="_blank">Ver Youtube</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
