@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DarkModeComponent } from './shared/dark-mode/dark-mode.component';
+import { MusicComponent } from './shared/about/music/music.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -36,6 +37,7 @@ registerLocaleData(localeES, 'es');
     ContactComponent,
     TimelineComponent,
     DarkModeComponent,
+    MusicComponent,
   ],
   imports: [
     BrowserModule,
