@@ -53,3 +53,9 @@ a:hover {
 .strong {
     color: var(--strong)
 }
+
+@media (max-width: 990px) {
+    .text-description {
+        width: 70%;
+    }
+}
