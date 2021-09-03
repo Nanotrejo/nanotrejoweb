@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { MusicComponent } from './shared/about/music/music.component';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
@@ -13,6 +14,16 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    children: [
+      {
+        path: 'music',
+        component: MusicComponent,
+      }
+    ]
+  },
+  {
+    path: 'music',
+    component: MusicComponent,
   },
   { path: '**', component: HomeComponent }
 ];
@@ -21,4 +32,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
