@@ -5,7 +5,7 @@
         </h1>
     </div>
     <div class="grid-container animate__animated animate__fadeIn">
-        <div class="card effect-link h-100" data-aos="fade-left" *ngFor="let video of videos">
+        <div class="card effect-link h-100" [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'" *ngFor="let video of videos; let i = index;">
             <img class="card-img-top img-card" (click)="showVideo(video.title, video.resourceId.videoId)" [src]="video.thumbnails?.high?.url" [alt]="video.title" loading="lazy">
             <div class="card-body w-100">
                 <h2 class="card-title more-info">{{video?.title}}</h2>

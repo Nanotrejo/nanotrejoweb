@@ -5,4 +5,5 @@ export interface Timeline{
     subtitle: string;
     url?: string;
     type: string;
+    stack?: [];
 }

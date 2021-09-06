@@ -14,6 +14,9 @@
                     <h3 *ngIf="time?.type == colorType?.job" class="date">{{time?.date | date}} - {{time?.date_end | date}}</h3>
                     <h1>{{time?.title}}</h1>
                     <p class="m-0">{{time?.subtitle}}</p>
+                    <p *ngIf="time?.stack">
+                        Stack: <span *ngFor="let stack of time?.stack">{{stack}} </span>
+                    </p>
                 </div>
             </li>
         </ul>

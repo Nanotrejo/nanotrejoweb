@@ -34,8 +34,8 @@ export class TimelineComponent implements OnInit {
       });
   
       this.timeline.sort((a: Timeline, b: Timeline) => {
-        return new Date(a.date).getTime() + new Date(b.date).getTime();
-      });
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      }).reverse();
     });
   }
 
