@@ -15,8 +15,7 @@
     
     .home-text-description {
         font-size: large;
-        color: rgba(177, 174, 174, 0.705);
-        height: 50%;
+        color: var(--text-description);
         width: 70%;
         margin: 0 auto;
     }
@@ -65,25 +64,11 @@
         /* display: flex; */
     }
     
-    .overline {
-        margin: 2rem;
-        color: var(--overline);
-        font-size: 22px;
-        line-height: 3rem;
-        font-weight: 500;
-        letter-spacing: 15px;
-        text-transform: uppercase;
-        text-align: center;
-        /* height: 100px; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
     .project {
         margin-top: 10%;
         background: rgba(0, 0, 0, 0.4);
         padding: 1rem;
+        overflow: hidden;
     }
     
     .contact {

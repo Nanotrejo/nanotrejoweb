@@ -8,33 +8,43 @@
     --letter: white;
     --hover: white;
     --text-color-navbar: rgba(255, 255, 255, 0.74);
+    --text-description: rgba(177, 174, 174, 0.705);
     --card-hover: rgb(136, 170, 184, 0.2);
     --text-light: #8dda7a;
     --overline: #00df9a;
+    --strong: #00ffb073;
+    --youtube: rgba(255, 0, 0, 0.46);
+    /* Light */
+    --letter-light: rgba(0, 0, 0, 0.74);
+    --hover-light: black;
     --background: #3A6073;
+    --background-gradient: #16222A;
     --error: #df0025;
+    --background-light-gradient: #fff;
+    --background-light: #3A6073;
+    --background-light-navbar: #3a607363;
+    --overline-light: #00ffae;
+    --text-light-description: rgba(70, 70, 70);
+    --text-light-info: rgba(70, 70, 70);
+    --strong-light: #fff;
 }
 
 * {
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: Graphik, sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
-    background: #16222A;
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A);
-    background: linear-gradient(to right, #3A6073, #16222A);
+    background: var(--background-gradient);
+    background: -webkit-linear-gradient(to right, var(--background), var(--background-gradient));
+    background: linear-gradient(to right, var(--background), var(--background-gradient));
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 html,
 body {
     height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .center-content {
@@ -59,4 +69,83 @@ body {
 
 .mat-simple-snackbar-action button {
     color: var(--letter);
+}
+
+.overline {
+    margin: 2rem;
+    color: var(--overline);
+    font-size: 22px;
+    line-height: 3rem;
+    font-weight: 500;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    /* height: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.light {
+    background: var(--background-light-gradient);
+    background: -webkit-linear-gradient(to right, var(--background-light), var(--background-light-gradient));
+    background: linear-gradient(to right, var(--background-light), var(--background-light-gradient));
+}
+
+body.light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+
+body.light .set-navbar {
+    /* background: var(--background-light-navbar); */
+}
+
+body.light .active {
+    color: var(--hover-light)!important;
+}
+
+body.light .nav-link {
+    color: var(--letter-light) !important;
+}
+
+body.light .overline,
+body.light .overline-text {
+    color: var(--overline-light);
+}
+
+body.light .home-text {
+    color: var(--letter-light);
+}
+
+body.light .home-text-description {
+    color: var(--text-light-description);
+}
+
+body.light .text-info {
+    color: var(--text-light-info) !important;
+}
+
+body.light .social-link {
+    color: var(--letter-light);
+    opacity: 0.8;
+}
+
+body.light .more-info,
+body.light .arrow {
+    color: var(--letter-light);
+}
+
+body.light .icon-set {
+    color: var(--text-light-info);
+}
+
+body.light .icon-set:hover,
+body.light .social-link:hover {
+    color: var(--letter-light);
+    opacity: 1;
+    z-index: 1;
+}
+
+body.light .strong {
+    color: var(--strong-light);
 }

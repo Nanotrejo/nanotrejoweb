@@ -11,16 +11,18 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { CardFlipModule } from './shared/card/card-flip/card-flip/card-flip.module';
+import { CardFlipModule } from './shared/card/card-flip.module';
 import { MatIconModule } from '@angular/material/icon';
-import { ProjectComponent } from './shared/project/project/project.component';
-import { FooterComponent } from './shared/footer/footer/footer.component';
-import { AboutComponent } from './shared/about/about/about.component';
-import { ContactComponent } from './shared/contact/contact/contact.component';
+import { ProjectComponent } from './shared/project/project.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AboutComponent } from './shared/about/about.component';
+import { ContactComponent } from './shared/contact/contact.component';
+import { TimelineComponent } from './shared/timeline/timeline.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { TimelineComponent } from './shared/timeline/timeline/timeline.component';
+import { DarkModeComponent } from './shared/dark-mode/dark-mode.component';
+import { MusicComponent } from './shared/about/music/music.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -34,6 +36,8 @@ registerLocaleData(localeES, 'es');
     AboutComponent,
     ContactComponent,
     TimelineComponent,
+    DarkModeComponent,
+    MusicComponent,
   ],
   imports: [
     BrowserModule,

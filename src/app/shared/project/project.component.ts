@@ -11,9 +11,13 @@ export class ProjectComponent implements OnInit {
   projects: Project[] = [];
   loading = false;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
+      this.getProject();
+  }
+
+  getProject(): void {
     this.projectService.getProject().subscribe((res: any) => {
       res.msg.forEach((project: Project) => {
         this.projects.push(project);

@@ -1,5 +1,4 @@
 footer {
-    /* background: rgba(0, 0, 0, 0.4); */
     display: flex;
     justify-content: center;
     align-self: center;
@@ -32,4 +31,8 @@ a:hover {
 
 .icon-set {
     font-size: 1.5rem;
+}
+
+.social-link {
+    z-index: 1;
 }

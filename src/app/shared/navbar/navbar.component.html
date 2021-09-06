@@ -5,7 +5,6 @@
                 <img class="logo mt-1" style="cursor: pointer;" src="assets/img/logo.png" alt="logo nanotrejo">
             </p>
         </a>
-        <!-- </button> -->
         <button class="navbar-toggler" style="margin-left: auto; border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,18 +19,18 @@
                 <a class="m-auto" (click)="goSection('')">
                     <img class="logo m-4" style="cursor: pointer;" src="assets/img/logo.png" alt="logo nanotrejo">
                 </a>
-                <li class="nav-item mx-auto navbar-scroll-br">
-                    <a [ngClass]="active_link == 'about' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('about')">Sobre mi</a>
+
+                <li class="nav-item mx-auto drop-down-menu navbar-scroll-br">
+                    <a [ngClass]="active_link == 'about' ? 'active' : ''" class="nav-link dropdown-toggle drop-down-button" role="button">Sobre mi</a>
+                    <div class="drop-down-menu-content">
+                        <a [ngClass]="active_link == 'about' ? 'active-dropdown' : ''" (click)="goSection('about')">Conóceme <i class="emoji">👨🏽‍💻</i></a>
+                        <a routerLink="/music" routerLinkActive="active-dropdown">Mi rincón <i class="emoji">🎹</i></a>
+                    </div>
                 </li>
-                <!-- <li class="nav-item mx-auto navbar-scroll-br">
-                    <a class="nav-link" id="navbarDropdown" role="button" [routerLink] [fragment]="'about'">Acerca</a>
-                </li> -->
+
                 <li class="nav-item mx-auto">
                     <a [ngClass]="active_link == 'contact' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('contact')">Contacto</a>
                 </li>
-                <!-- <li class="nav-item mx-auto">
-                    <a class="nav-link" tabindex="-1" [routerLink] [fragment]="'contact'">Contacto</a>
-                </li> -->
             </ul>
         </div>
     </div>
