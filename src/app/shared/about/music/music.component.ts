@@ -11,13 +11,16 @@ import Swal from 'sweetalert2';
 export class MusicComponent implements OnInit {
 
   videos: Video[] = [];
+  loading = false;
 
   constructor(private youtubeService: YoutubeService) { }
 
   ngOnInit(): void {
+    document.getElementById('navbarSupportedContent')?.classList.remove('show');
     this.youtubeService.getVideos()
       .subscribe(res => {
         this.videos.push(...res);
+        this.loading = true;
       })
   }
 

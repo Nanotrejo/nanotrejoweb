@@ -9,6 +9,7 @@ import { TimelineService } from '@core/service/timeline.service';
 })
 export class TimelineComponent implements OnInit {
   timeline: Timeline[] = [];
+  loading = false;
 
   colorType = {
     curso: '',
@@ -30,6 +31,7 @@ export class TimelineComponent implements OnInit {
         if (time?.type !== undefined) {
           let col = Object.keys(this.colorType).indexOf(time?.type.toLowerCase());
           time.type = Object.values(this.colorType)[col];
+          this.loading = true;
         }
       });
   
