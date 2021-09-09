@@ -153,3 +153,11 @@ body.light .social-link:hover {
 body.light .strong {
     color: var(--strong-light);
 }
+
+body.light .f-invert {
+    filter: none;
+}
+
+body.light .icon-svg {
+    color: var(--hover-light);
+}
