@@ -1,37 +1,64 @@
 <nav class="navbar navbar-expand-lg navbar-dark set-navbar sticky-top p-0" [class.navbar-scroll]="window_scroll">
     <div class="container-fluid p-0">
-        <a class="navbar-toggler" style="border: none;" (click)="goSection('')">
+        <a class="navbar-toggler" style="border: none" (click)="goSection('')">
             <p>
-                <img class="logo mt-1" style="cursor: pointer;" src="assets/img/logo.png" alt="logo nanotrejo">
+                <img class="logo mt-1" style="cursor: pointer" src="assets/img/logo.png" alt="logo nanotrejo" />
             </p>
         </a>
-        <button class="navbar-toggler" style="margin-left: auto; border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <button class="navbar-toggler" style="margin-left: auto; border: none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                 <li class="nav-item mx-auto navbar-scroll-br">
-                    <a [ngClass]="active_link == 'home' ? 'active' : ''" class="nav-link" aria-current="page" role="button" (click)="goSection('')">Inicio</a>
-                </li>
-                <li class="nav-item mx-auto navbar-scroll-br">
-                    <a [ngClass]="active_link == 'project' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('project')">Proyectos</a>
-                </li>
-                <a class="m-auto" (click)="goSection('')">
-                    <img class="logo m-4" style="cursor: pointer;" src="assets/img/logo.png" alt="logo nanotrejo">
-                </a>
+                    <a [ngClass]="active_link == 'home' ? 'active' : ''" class="nav-link" aria-current="page" role="button" (click)="goSection('')">Inicio</a
+          >
+        </li>
+        <li class="nav-item mx-auto navbar-scroll-br">
+          <a
+            [ngClass]="active_link == 'project' ? 'active' : ''"
+            class="nav-link"
+            role="button"
+            (click)="goSection('project')"
+            >Proyectos</a
+          >
+        </li>
+        <a class="m-auto" (click)="goSection('')">
+          <img
+            class="logo m-4"
+            style="cursor: pointer"
+            src="assets/img/logo.png"
+            alt="logo nanotrejo"
+          />
+        </a>
+                    <li class="nav-item mx-auto drop-down-menu navbar-scroll-br">
+                        <a [ngClass]="active_link == 'about' ? 'active' : ''" class="nav-link dropdown-toggle drop-down-button" role="button">Sobre mi</a
+          >
+          <div class="drop-down-menu-content">
+            <a
+              [ngClass]="active_link == 'about' ? 'active-dropdown' : ''"
+              (click)="goSection('about')"
+              >Conóceme <i class="emoji">👨🏽‍💻</i></a
+            >
+            <a routerLink="/music" routerLinkActive="active-dropdown"
+              >Mi rincón <i class="emoji">🎹</i></a
+            >
+            <a routerLink="/cheatsheet" routerLinkActive="active-dropdown"
+              >Trucos <i class="emoji">📝</i></a
+            >
+          </div>
+        </li>
 
-                <li class="nav-item mx-auto drop-down-menu navbar-scroll-br">
-                    <a [ngClass]="active_link == 'about' ? 'active' : ''" class="nav-link dropdown-toggle drop-down-button" role="button">Sobre mi</a>
-                    <div class="drop-down-menu-content">
-                        <a [ngClass]="active_link == 'about' ? 'active-dropdown' : ''" (click)="goSection('about')">Conóceme <i class="emoji">👨🏽‍💻</i></a>
-                        <a routerLink="/music" routerLinkActive="active-dropdown">Mi rincón <i class="emoji">🎹</i></a>
-                    </div>
-                </li>
-
-                <li class="nav-item mx-auto">
-                    <a [ngClass]="active_link == 'contact' ? 'active' : ''" class="nav-link" role="button" (click)="goSection('contact')">Contacto</a>
-                </li>
-            </ul>
-        </div>
+        <li class="nav-item mx-auto">
+          <a
+            [ngClass]="active_link == 'contact' ? 'active' : ''"
+            class="nav-link"
+            role="button"
+            (click)="goSection('contact')"
+            >Contacto</a
+          >
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
