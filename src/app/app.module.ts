@@ -27,6 +27,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '@environment/environment';
 import { CheatsheetComponent } from './shared/about/cheatsheet/cheatsheet.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { TrickComponent } from './shared/about/cheatsheet/trick/trick.component';
+import { CuriositiesComponent } from './shared/about/cheatsheet/curiosities/curiosities.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -43,6 +45,8 @@ registerLocaleData(localeES, 'es');
     DarkModeComponent,
     MusicComponent,
     CheatsheetComponent,
+    TrickComponent,
+    CuriositiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,7 @@ registerLocaleData(localeES, 'es');
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
