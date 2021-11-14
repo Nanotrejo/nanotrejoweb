@@ -1,0 +1,99 @@
+.cheatsheet {
+    width: 90%;
+}
+
+.title-sheet {
+    border-bottom: 1px solid var(--text-color-navbar);
+    color: var(--text-color-navbar);
+    padding: 1rem;
+    background: rgb(255 255 255 / 8%);
+}
+
+.description-sheet {
+    color: var(--text-color-navbar);
+    padding: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 1rem;
+    background: var(--text-color-navbar);
+}
+
+.search-input::placeholder {
+    background-image: url(../../../../assets/icons/search.svg);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position: right;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    color: var(--letter);
+    margin: 10%;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.grid-container>div {
+    display: grid;
+    justify-content: center;
+    align-content: space-between;
+    align-items: baseline;
+    border-radius: 1rem;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+}
+
+.img-card {
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.img-card:hover {
+    opacity: 0.6;
+}
+
+.card-title {
+    font-size: 20px;
+    height: 50%;
+}
+
+.card-text {
+    color: var(--text-description);
+    height: 4rem;
+}
+
+.card-date {
+    font-weight: bold;
+    color: var(--text-description);
+    margin-top: 2rem;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    background: var(--overline);
+    border: none;
+    cursor: pointer;
+    margin: 0 1rem;
+    padding: .5rem;
+}
+
+.button:hover {
+    opacity: 0.6;
+}
+
+.button-danger {
+    background: var(--youtube)
+}
+
+.grid-button {
+    display: flex;
+}

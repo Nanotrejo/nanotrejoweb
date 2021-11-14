@@ -23,6 +23,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DarkModeComponent } from './shared/dark-mode/dark-mode.component';
 import { MusicComponent } from './shared/about/music/music.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '@environment/environment';
+import { CheatsheetComponent } from './shared/about/cheatsheet/cheatsheet.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { TrickComponent } from './shared/about/cheatsheet/trick/trick.component';
+import { CuriositiesComponent } from './shared/about/cheatsheet/curiosities/curiosities.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -38,6 +44,9 @@ registerLocaleData(localeES, 'es');
     TimelineComponent,
     DarkModeComponent,
     MusicComponent,
+    CheatsheetComponent,
+    TrickComponent,
+    CuriositiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +60,13 @@ registerLocaleData(localeES, 'es');
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MarkdownModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],

@@ -86,6 +86,10 @@ body {
     align-items: center;
 }
 
+.sk-bounce-dot {
+    background-color: var(--overline) !important;
+}
+
 body.light {
     background: var(--background-light-gradient);
     background: -webkit-linear-gradient(to right, var(--background-light), var(--background-light-gradient));
@@ -148,4 +152,12 @@ body.light .social-link:hover {
 
 body.light .strong {
     color: var(--strong-light);
+}
+
+body.light .f-invert {
+    filter: none;
+}
+
+body.light .icon-svg {
+    color: var(--hover-light);
 }

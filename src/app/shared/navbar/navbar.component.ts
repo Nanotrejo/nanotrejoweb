@@ -37,6 +37,7 @@ export class NavbarComponent implements OnInit {
     } else {
       this.router.navigateByUrl('/home');
     }
+    document.getElementById('navbarSupportedContent')?.classList.remove('show');
   }
 
   originalOrder = (

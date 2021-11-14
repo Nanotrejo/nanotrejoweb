@@ -1,4 +1,9 @@
-<div class="center-content">
+<div *ngIf="!loading" class="sk-bounce center-content mx-auto mt-4">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+</div>
+
+<div *ngIf="loading" class="center-content">
     <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.certificate}">Certificados</p>
     <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.curso}">Cursos</p>
     <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.job}">Experiencia laboral</p>

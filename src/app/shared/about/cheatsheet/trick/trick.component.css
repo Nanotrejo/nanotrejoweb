@@ -1,0 +1,43 @@
+.button {
+    display: block;
+    background: transparent;
+    border: 1px solid var(--overline);
+    cursor: pointer;
+    margin: 0;
+    color: var(--letter);
+}
+
+.button:hover {
+    background: var(--overline);
+}
+
+.content-trick {
+    color: var(--letter)
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.img {
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--letter);
+    padding: 0.5rem;
+}
+
+.link:hover {
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+        text-align: initial !important;
+    }
+}

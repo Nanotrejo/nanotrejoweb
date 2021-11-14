@@ -1,3 +1,7 @@
+<div *ngIf="!loading" class="sk-bounce center-content mx-auto">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+</div>
 <div class="container" *ngIf="loading">
     <div class="grid-container">
         <div class="card effect-link" data-aos="fade-left" *ngFor="let project of projects">

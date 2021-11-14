@@ -19,10 +19,12 @@ export class ProjectComponent implements OnInit {
 
   getProject(): void {
     this.projectService.getProject().subscribe((res: any) => {
-      res.msg.forEach((project: Project) => {
-        this.projects.push(project);
-        this.loading = true;
-      });
+      if (res.msg.length != 0) {
+        res.msg.forEach((project: Project) => {
+          this.projects.push(project);
+          this.loading = true;
+        });
+      }
     });
   }
 }
