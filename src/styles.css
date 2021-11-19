@@ -35,7 +35,6 @@
 }
 
 body {
-    background: var(--background-gradient);
     background: -webkit-linear-gradient(to right, var(--background), var(--background-gradient));
     background: linear-gradient(to right, var(--background), var(--background-gradient));
     margin: 0;
@@ -129,7 +128,9 @@ body.light .text-info {
     color: var(--text-light-info) !important;
 }
 
-body.light .social-link {
+body.light .social-link,
+body.light .link-trick,
+body.light blockquote>p {
     color: var(--letter-light);
     opacity: 0.8;
 }
@@ -144,7 +145,8 @@ body.light .icon-set {
 }
 
 body.light .icon-set:hover,
-body.light .social-link:hover {
+body.light .social-link:hover,
+body.light .link-trick:hover {
     color: var(--letter-light);
     opacity: 1;
     z-index: 1;
@@ -160,4 +162,48 @@ body.light .f-invert {
 
 body.light .icon-svg {
     color: var(--hover-light);
+}
+
+.text-spacing {
+    margin-bottom: 2rem !important;
+    margin: 0 auto;
+    display: table;
+}
+
+pre {
+    margin-bottom: 3rem !important;
+}
+
+.text-title-trick {
+    margin: 1rem 0 1.5rem !important;
+}
+
+blockquote {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+blockquote>p,
+blockquote>.text-spacing {
+    margin: 0;
+    color: var(--text-color-navbar)
+}
+
+.link-trick {
+    text-decoration: none;
+    color: var(--letter);
+    opacity: 0.6;
+}
+
+.link-trick:hover {
+    opacity: 1;
+    color: var(--letter);
+}
+
+p>img {
+    width: 100%;
+    max-width: 350px;
 }

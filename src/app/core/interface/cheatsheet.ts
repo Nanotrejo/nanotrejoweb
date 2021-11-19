@@ -5,4 +5,5 @@ export interface Cheatsheet {
     _id: string;
     type: string;
     author: string;
+    urlPost: string;
 }

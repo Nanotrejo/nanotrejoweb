@@ -2,22 +2,19 @@
     <div class="sk-bounce-dot"></div>
     <div class="sk-bounce-dot"></div>
 </div>
-<div class="center-content w-100 mb-4" *ngIf="loading">
-    <div class="w-75">
+<div class="center-content w-100 mb-4 animate__animated animate__fadeIn" *ngIf="loading">
+    <div class="content-trick">
         <div class="mb-3">
             <button class="btn button center-content d-flex" routerLink="/cheatsheet">
         <span class="material-icons"> arrow_back </span>
         Atrás
       </button>
         </div>
-        <div class="center-content flex-column content-trick home-text mt-4" *ngFor="let trick of tricks; let i = index">
-            <h1 class="text-justify w-100">
-                {{ i + 1 }} - {{ trick.title | uppercase }}
-            </h1>
-            <span class="text-justify w-100">{{ trick.description }}</span>
-            <span>{{ trick?.code }}</span>
-            <img class="img" src="{{ trick.image }}" alt="{{ trick.title }}" />
-            <a class="link mt-3 home-text" href="{{ trick.url }}">{{ trick?.author }}</a>
+        <div *ngIf="markdown.length === 0" class="center-content animate__animated animate__fadeIn">
+            <span class="more-info">No se ha encontrado ningún truco.</span>
+        </div>
+        <div class="center-content flex-column color-trick home-text mt-4">
+            <markdown class="w-100" [data]="markdown" (load)="onLoad($event)" (error)="onError($event)" lineNumbers ngPreserveWhitespaces></markdown>
         </div>
     </div>
 </div>

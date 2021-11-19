@@ -37,4 +37,21 @@ export class CheatsheetService {
         map((items) => items.map((trick: any) => trick.trick))
       );
   }
+
+  getMarkdownById(cheatsheet_id: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      cheatsheet_id: cheatsheet_id,
+    });
+
+    return this.http
+      .get<Tricks[]>(`${environment.nanotrejoback}/get-cheatsheet-by-id`, {
+        headers: headers,
+      })
+      .pipe(
+        map((response: any) => {
+          return response.msg;
+        }),
+        map((items) => items[0]));
+  }
 }

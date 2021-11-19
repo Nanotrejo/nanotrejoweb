@@ -13,17 +13,17 @@
             <input class="search-input" type="text" placeholder="Buscar..." (keyup)="searchCheatsheet($event)">
         </div>
         <div *ngIf="allCheats.length === 0" class="grid-container w-auto cheatsheet animate__animated animate__fadeIn">
-            <span>No se ha encontrado ningún truco.</span>
+            <span class="more-info">No se ha encontrado ningún truco.</span>
         </div>
         <div *ngIf="allCheats.length !== 0" class="grid-container cheatsheet animate__animated animate__fadeIn">
-            <div class="card effect-link h-100" [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'" *ngFor="let cheatsheet of allCheats; let i = index;">
+            <div class="card effect-link h-auto" [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'" *ngFor="let cheatsheet of allCheats; let i = index;">
                 <img class="card-img-top img-card" src="{{ cheatsheet.image }}" loading="lazy" (click)="viewCheatsheet(cheatsheet._id, cheatsheet.type)">
                 <div class="card-body w-100">
                     <h2 class="card-title more-info">{{cheatsheet?.title | uppercase}}</h2>
                     <p class="card-text home-text-description">{{cheatsheet?.description}}</p>
                     <p class="card-date home-text-description"><strong>Autor: </strong>{{cheatsheet?.author}}</p>
                     <div class="grid-button">
-                        <button class="btn btn-primary button" (click)="viewCheatsheet(cheatsheet._id, cheatsheet.type)">Ver truco</button>
+                        <button class="btn btn-primary button" (click)="viewCheatsheet(cheatsheet.urlPost, cheatsheet.type)">Ver truco</button>
                     </div>
                 </div>
             </div>

@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "http-server": "^13.0.2",
     "ngx-markdown": "^12.0.1",
+    "primjs": "^0.6.5",
     "rxjs": "~6.6.0",
     "spinkit": "^2.0.1",
     "sweetalert2": "^11.1.4",

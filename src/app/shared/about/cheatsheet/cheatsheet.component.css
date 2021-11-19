@@ -38,6 +38,7 @@
     margin: 10%;
     margin-top: 2rem;
     overflow: hidden;
+    width: -webkit-fill-available;
 }
 
 .grid-container>div {
@@ -49,6 +50,7 @@
     background: transparent;
     border: 1px solid #fff;
     width: 100%;
+    max-width: 400px;
 }
 
 .img-card {
@@ -96,4 +98,13 @@
 
 .grid-button {
     display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .cheatsheet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
