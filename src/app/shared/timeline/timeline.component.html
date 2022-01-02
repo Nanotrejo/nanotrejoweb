@@ -1,29 +1,50 @@
 <div *ngIf="!loading" class="sk-bounce center-content mx-auto mt-4">
-    <div class="sk-bounce-dot"></div>
-    <div class="sk-bounce-dot"></div>
+  <div class="double-bounce1 sk-bounce-dot"></div>
+  <div class="double-bounce2 sk-bounce-dot"></div>
 </div>
 
 <div *ngIf="loading" class="center-content">
-    <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.certificate}">Certificados</p>
-    <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.curso}">Cursos</p>
-    <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.job}">Experiencia laboral</p>
-    <p class="" style="width: 50%;" [ngStyle]="{'color': colorType?.study}">Estudios</p>
+  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.certificate }">
+    Certificados
+  </p>
+  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.curso }">
+    Cursos
+  </p>
+  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.job }">
+    Experiencia laboral
+  </p>
+  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.study }">
+    Estudios
+  </p>
 </div>
 <div class="container">
-    <div class="timeline">
-        <ul class="p-0">
-            <li *ngFor="let time of timeline; let i = index;" [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'" [ngStyle]="{'background': time?.type}">
-                <div class="timeline-content center-content flex-column">
-                    <a *ngIf="time.url?.length != 0" class="center-content position-absolute link" href="{{time?.url}}" target="_black"></a>
-                    <h3 *ngIf="time?.type != colorType?.job" class="date">{{time?.date | date}}</h3>
-                    <h3 *ngIf="time?.type == colorType?.job" class="date">{{time?.date | date}} - {{time?.date_end | date}}</h3>
-                    <h1>{{time?.title}}</h1>
-                    <p class="m-0">{{time?.subtitle}}</p>
-                    <p *ngIf="time?.stack">
-                        Stack: <span *ngFor="let stack of time?.stack">{{stack}} </span>
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="timeline">
+    <ul class="p-0">
+      <li
+        *ngFor="let time of timeline; let i = index"
+        [attr.data-aos]="i % 2 == 0 ? 'fade-right' : 'fade-left'"
+        [ngStyle]="{ background: time?.type }"
+      >
+        <div class="timeline-content center-content flex-column">
+          <a
+            *ngIf="time.url?.length != 0"
+            class="center-content position-absolute link"
+            href="{{ time?.url }}"
+            target="_black"
+          ></a>
+          <h3 *ngIf="time?.type != colorType?.job" class="date">
+            {{ time?.date | date }}
+          </h3>
+          <h3 *ngIf="time?.type == colorType?.job" class="date">
+            {{ time?.date | date }} - {{ time?.date_end | date }}
+          </h3>
+          <h1>{{ time?.title }}</h1>
+          <p class="m-0">{{ time?.subtitle }}</p>
+          <p *ngIf="time?.stack">
+            Stack: <span *ngFor="let stack of time?.stack">{{ stack }} </span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
