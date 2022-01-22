@@ -35,8 +35,11 @@
           <h3 *ngIf="time?.type != colorType?.job" class="date">
             {{ time?.date | date }}
           </h3>
-          <h3 *ngIf="time?.type == colorType?.job" class="date">
+          <h3 *ngIf="(time?.type == colorType?.job) && isDate(time?.date_end)" class="date">
             {{ time?.date | date }} - {{ time?.date_end | date }}
+          </h3>
+          <h3 *ngIf="(time?.type == colorType?.job) && !isDate(time?.date_end)" class="date">
+            {{ time?.date | date }} - {{ time?.date_end }}
           </h3>
           <h1>{{ time?.title }}</h1>
           <p class="m-0">{{ time?.subtitle }}</p>

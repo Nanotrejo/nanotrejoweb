@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Timeline } from '@core/interface/timeline';
-import { TimelineService } from '@core/service/timeline.service';
+import {Component, OnInit} from '@angular/core';
+import {Timeline} from '@core/interface/timeline';
+import {TimelineService} from '@core/service/timeline.service';
 
 @Component({
   selector: 'app-timeline',
@@ -18,13 +18,14 @@ export class TimelineComponent implements OnInit {
     study: '#878923'
   };
 
-  constructor(private timelineService: TimelineService) {}
+  constructor(private timelineService: TimelineService) {
+  }
 
   ngOnInit(): void {
     this.getTimeline();
   }
 
-  getTimeline(): void{
+  getTimeline(): void {
     this.timelineService.getTimeline().subscribe((res: any) => {
       this.timeline = [...res.msg];
       this.timeline.map((time) => {
@@ -34,7 +35,7 @@ export class TimelineComponent implements OnInit {
           this.loading = true;
         }
       });
-  
+
       this.timeline.sort((a: Timeline, b: Timeline) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       }).reverse();
@@ -52,5 +53,9 @@ export class TimelineComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  isDate(date: any): boolean {
+    return !date.includes('Actualidad')
   }
 }
