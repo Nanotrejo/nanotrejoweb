@@ -3,17 +3,37 @@
   <div class="double-bounce2 sk-bounce-dot"></div>
 </div>
 
-<div *ngIf="loading" class="center-content">
-  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.certificate }">
+<div *ngIf="loading" class="center-content min-width-tags">
+  <p
+    (click)="filterTag(colorType['certificate'])"
+    class="tag-select"
+    [ngStyle]="{ color: colorType?.certificate }"
+    [ngClass]="{ 'tag-selected': colorType?.certificate === tagSelected }"
+  >
     Certificados
   </p>
-  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.curso }">
+  <p
+    (click)="filterTag(colorType['curso'])"
+    class="tag-select"
+    [ngStyle]="{ color: colorType?.curso }"
+    [ngClass]="{ 'tag-selected': colorType?.curso === tagSelected }"
+  >
     Cursos
   </p>
-  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.job }">
+  <p
+    (click)="filterTag(colorType['job'])"
+    class="tag-select"
+    [ngStyle]="{ color: colorType?.job }"
+    [ngClass]="{ 'tag-selected': colorType?.job === tagSelected }"
+  >
     Experiencia laboral
   </p>
-  <p class="" style="width: 50%" [ngStyle]="{ color: colorType?.study }">
+  <p
+    (click)="filterTag(colorType['study'])"
+    class="tag-select"
+    [ngStyle]="{ color: colorType?.study }"
+    [ngClass]="{ 'tag-selected': colorType?.study === tagSelected }"
+  >
     Estudios
   </p>
 </div>
@@ -35,10 +55,16 @@
           <h3 *ngIf="time?.type != colorType?.job" class="date">
             {{ time?.date | date }}
           </h3>
-          <h3 *ngIf="(time?.type == colorType?.job) && isDate(time?.date_end)" class="date">
+          <h3
+            *ngIf="time?.type == colorType?.job && isDate(time?.date_end)"
+            class="date"
+          >
             {{ time?.date | date }} - {{ time?.date_end | date }}
           </h3>
-          <h3 *ngIf="(time?.type == colorType?.job) && !isDate(time?.date_end)" class="date">
+          <h3
+            *ngIf="time?.type == colorType?.job && !isDate(time?.date_end)"
+            class="date"
+          >
             {{ time?.date | date }} - {{ time?.date_end }}
           </h3>
           <h1>{{ time?.title }}</h1>

@@ -7,7 +7,7 @@ import { Timeline } from '@core/interface/timeline';
   providedIn: 'root',
 })
 export class TimelineService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getTimeline() {
     return this.http.get<Timeline[]>(`${environment.nanotrejoback}/timeline`);
@@ -15,5 +15,14 @@ export class TimelineService {
 
   getCV() {
     return this.http.get(`${environment.nanotrejoback}/get-cv`);
+  }
+
+  getColorsType() {
+    return {
+      curso: '#17252dbf',
+      job: '#ff000075',
+      certificate: '#00ffb073',
+      study: '#878923'
+    };
   }
 }
