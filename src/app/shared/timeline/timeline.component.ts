@@ -9,22 +9,21 @@ import { TimelineService } from '@core/service/timeline.service';
 })
 export class TimelineComponent implements OnInit {
   timeline: Timeline[] = [];
+  timelineTemp: Timeline[] = [];
   loading = false;
 
-  colorType = {
-    curso: '',
-    job: '#ff000075',
-    certificate: '#00ffb073',
-    study: '#878923'
-  };
+  colorType = this.timelineService.getColorsType();
 
-  constructor(private timelineService: TimelineService) {}
+  tagSelected: string = '';
+
+  constructor(private timelineService: TimelineService) {
+  }
 
   ngOnInit(): void {
     this.getTimeline();
   }
 
-  getTimeline(): void{
+  getTimeline(): void {
     this.timelineService.getTimeline().subscribe((res: any) => {
       this.timeline = [...res.msg];
       this.timeline.map((time) => {
@@ -34,10 +33,11 @@ export class TimelineComponent implements OnInit {
           this.loading = true;
         }
       });
-  
+
       this.timeline.sort((a: Timeline, b: Timeline) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       }).reverse();
+      this.timelineTemp = this.timeline;
     });
   }
 
@@ -52,5 +52,21 @@ export class TimelineComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  isDate(date: any): boolean {
+    return !date.includes('Actualidad');
+  }
+
+  filterTag(tag: string): void {
+
+    this.tagSelected = this.tagSelected === tag ? '' : tag;
+
+
+    this.timeline = this.timelineTemp.filter((timeline) => {
+      return (
+        timeline.type.toLowerCase().includes(this.tagSelected)
+      );
+    });
   }
 }
