@@ -2,7 +2,7 @@
     <div (click)="toggle()" [ngClass]="toggleProperty ? 'flipped' : ''" class="card flip m-2">
         <div class="img front">
             <ng-content select="card-flip-front"></ng-content>
-            <img [ngClass]="toggleProperty ? 'img-flip' : ''" class="img animate__animated animate__flipInY" src="assets/img/nanotrejo.jpg" alt="nanotrejo" loading="lazy">
+            <img [ngClass]="toggleProperty ? 'img-flip' : ''" class="img avatar animate__animated animate__flipInY" src="assets/img/nano-img-400.png" alt="nanotrejo" loading="lazy">
             <p [ngClass]="toggleProperty ? 'img-flip' : ''" class="animate__animated animate__flipInY text-info" loading="lazy">Más información</p>
         </div>
         <div *ngIf="toggleProperty" class="back" style="margin-top: 5%">
