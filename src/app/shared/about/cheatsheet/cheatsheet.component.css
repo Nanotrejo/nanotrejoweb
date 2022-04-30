@@ -115,6 +115,10 @@
     flex-direction: column;
   }
 
+  .grid-container > div {
+    display: flex;
+  }
+
   .img-card {
     height: 100%;
   }

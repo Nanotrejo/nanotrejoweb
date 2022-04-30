@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { YoutubeService } from '@core/service/youtube.service';
 import { Video } from '@core/interface/youtube';
 import Swal from 'sweetalert2';
@@ -8,10 +8,12 @@ import Swal from 'sweetalert2';
   templateUrl: './music.component.html',
   styleUrls: ['./music.component.css']
 })
-export class MusicComponent implements OnInit {
+export class MusicComponent implements OnInit, OnDestroy {
 
   videos: Video[] = [];
+  play: boolean = false;
   loading = false;
+  audio!: any;
 
   constructor(private youtubeService: YoutubeService) { }
 
@@ -21,10 +23,16 @@ export class MusicComponent implements OnInit {
       .subscribe(res => {
         this.videos.push(...res);
         this.loading = true;
-      })
+      });
+    this.initAudio();
+  }
+
+  ngOnDestroy(): void {
+    this.audio.pause();
   }
 
   showVideo(title: string, url: string): void {
+    this.audio.pause();
     Swal.fire({
       confirmButtonColor: '#00df9a',
       showClass: {
@@ -53,12 +61,31 @@ export class MusicComponent implements OnInit {
             allowfullscreen>
       </iframe>
       `
+    }).then(() => {
+      this.play && this.audio.play();
     });
   }
 
   showYoutube(id: string): void {
     window.open(`https://www.youtube.com/watch/${id}`, "_blank");
-
   }
 
+  initAudio() {
+    this.audio = new Audio();
+    this.play = true;
+    this.audio.src = '../../../../assets/audio/music.wav';
+    this.audio.loop = true;
+    this.audio.load();
+    this.audio.play();
+  }
+
+  changeAudio() {
+    if (this.play) {
+      this.audio.pause();
+      this.play = false;
+    } else {
+      this.audio.play();
+      this.play = true;
+    }
+  }
 }

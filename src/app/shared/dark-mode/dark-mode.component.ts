@@ -19,7 +19,6 @@ export class DarkModeComponent implements OnInit {
       switchButton?.toggle('active');
     } else {
       this.setLocalStorage('light-mode');
-      switchButton?.toggle('deactive');
     }
   }
 
