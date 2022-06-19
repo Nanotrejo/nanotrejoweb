@@ -1,3 +1,4 @@
+import { GastronomyComponent } from './shared/about/gastronomy/gastronomy.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'cheatsheet',
     component: CheatsheetComponent,
+  },
+  {
+    path: 'gastronomy',
+    component: GastronomyComponent,
   },
   {
     path: 'trick/:id',

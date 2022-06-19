@@ -29,6 +29,7 @@ import { CheatsheetComponent } from './shared/about/cheatsheet/cheatsheet.compon
 import { MarkdownModule } from 'ngx-markdown';
 import { TrickComponent } from './shared/about/cheatsheet/trick/trick.component';
 import { CuriositiesComponent } from './shared/about/cheatsheet/curiosities/curiosities.component';
+import { GastronomyComponent } from './shared/about/gastronomy/gastronomy.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -47,6 +48,7 @@ registerLocaleData(localeES, 'es');
     CheatsheetComponent,
     TrickComponent,
     CuriositiesComponent,
+    GastronomyComponent,
   ],
   imports: [
     BrowserModule,

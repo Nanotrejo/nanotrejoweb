@@ -232,8 +232,6 @@ body.light .icon-svg {
 
 .text-spacing {
   margin-bottom: 2rem !important;
-  margin: 0 auto;
-  display: table;
 }
 
 pre {
@@ -241,6 +239,7 @@ pre {
 }
 
 .text-title-trick {
+  color: var(--overline);
   margin: 1rem 0 1.5rem !important;
 }
 

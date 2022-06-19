@@ -1,0 +1,9 @@
+<div *ngIf="!loading" class="sk-bounce center-content mx-auto">
+  <div class="double-bounce1 sk-bounce-dot"></div>
+  <div class="double-bounce2 sk-bounce-dot"></div>
+</div>
+<iframe
+  [class.d-none]="!loading"
+  class="center-content animate__animated animate__fadeIn"
+  [src]="notionSanitizer"
+></iframe>
