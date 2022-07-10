@@ -17,6 +17,7 @@ export class GastronomyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById('navbarSupportedContent')?.classList.remove('show');
     this.getDataNotion();
   }
 
