@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Cheatsheet } from '@core/interface/cheatsheet';
-import { CheatsheetService } from '../../../core/service/cheatsheet.service';
+import { CheatsheetService } from '@core/service/cheatsheet.service';
 
 @Component({
   selector: 'app-cheatsheet',
