@@ -12,6 +12,7 @@ Web: https://nanotrejo.es
 
 📝 Trucos.
 
+🍫 Gastronomía.
 
 
 ### ¿Qué he utilizado para este proyecto?
