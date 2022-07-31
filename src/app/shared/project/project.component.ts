@@ -102,7 +102,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
     if (this.timeout) clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
       this.focused++;
-      // this.update();
+      this.update();
     }, 5000);
   }
 
