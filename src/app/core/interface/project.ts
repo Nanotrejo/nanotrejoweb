@@ -5,4 +5,5 @@ export interface Project {
   drive?: string;
   github?: string;
   web?: string;
+  rotation?: number;
 }
