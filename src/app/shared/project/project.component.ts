@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Project } from '@core/interface/project';
-import { ProjectService } from '@core/service/project.service';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Project} from '@core/interface/project';
+import {ProjectService} from '@core/service/project.service';
 
 @Component({
   selector: 'app-project',
@@ -10,31 +10,34 @@ import { ProjectService } from '@core/service/project.service';
 export class ProjectComponent implements OnInit, AfterViewInit {
   projects: Project[] = [];
   loading = false;
-  
+
   rotationAmt: number = 0;
   focused: number = 0;
   radius: number = 0;
   distToEdge: number = 0;
   timeout: any;
+  stopCarousel: boolean = false;
+  projectSelected: string = '';
 
   carouselItemsElem!: HTMLElement;
   navElem!: HTMLElement;
   navBtn!: HTMLElement;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService) {
+  }
 
 
   ngOnInit(): void {
     this.loading = true;
   }
-  
+
   async ngAfterViewInit() {
     await this.getProject();
     this.initElement();
-    this.createCarousel();
+    await this.createCarousel();
   }
-  
-  initElement(){
+
+  initElement() {
     this.carouselItemsElem = document.querySelector(
       '.carousel-items'
     ) as HTMLElement;
@@ -49,7 +52,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
           if (res.msg.length != 0) {
             res.msg.forEach((project: Project, index: number) => {
               this.projects.push(project);
-              index === res.msg.length-1 && resolve(true);
+              index === res.msg.length - 1 && resolve(true);
             });
           }
         });
@@ -89,7 +92,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
       '--rotation',
       -Math.round(this.focused * this.rotationAmt) + 'deg'
     );
-    const { children }: any = this.carouselItemsElem;
+    const {children}: any = this.carouselItemsElem;
     for (var i = 0; i < children.length; i++) {
       if (this.getFocusedIndex() === i) {
         children[i].style.setProperty('filter', 'blur(0)');
@@ -100,6 +103,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
       }
     }
     if (this.timeout) clearTimeout(this.timeout);
+    if (this.stopCarousel) return;
     this.timeout = setTimeout(() => {
       this.focused++;
       this.update();
@@ -114,11 +118,18 @@ export class ProjectComponent implements OnInit, AfterViewInit {
 
   arrowRight() {
     this.focused++;
+    this.stopCarousel = false;
     this.update();
   }
 
   arrowLeft() {
     this.focused--;
+    this.stopCarousel = false;
     this.update();
+  }
+
+  selectProject(projectId: string) {
+    this.stopCarousel = !this.stopCarousel;
+    this.projectSelected = projectId;
   }
 }

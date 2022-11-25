@@ -7,16 +7,18 @@
     <div
       *ngFor="let project of projects"
       class="chat-bubble center-content flex-column"
+      [class.open-project]="stopCarousel && project._id === projectSelected"
       style="--rotation: {{ project.rotation }}deg"
     >
-      <div>
+      <div class="w-100 h-100">
         <img
           class="card-img-top img-card"
           src="{{ project?.img }}"
+          (click)="selectProject(project?._id ?? ''); update();"
           [alt]="project?.title"
         />
       </div>
-      <div class="p-3">
+      <div class="p-3 w-100 h-100">
         <div class="content">
           <h3 class="d-flex justify-content-center">
             {{ project.title }}
@@ -24,6 +26,7 @@
         </div>
         <div class="subtitle">
           <div class="subtitle_text">{{ project.subtitle }}</div>
+          <div *ngIf="project._id === projectSelected && stopCarousel" class="subtitle_text">{{ project?.description }}</div>
           <div class="shared-project">
             <div *ngIf="project.drive?.length != 0">
               <a

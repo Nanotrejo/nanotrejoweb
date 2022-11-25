@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  nanotrejoback: 'https://nanotrejoback.herokuapp.com'
+  nanotrejoback: 'https://nanotrejoback.onrender.com'
+  // nanotrejoback: 'http://localhost:3000'
 };
 
 /*
